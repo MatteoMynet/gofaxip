@@ -1,4 +1,4 @@
-// This file is part of the GOfax.IP project - https://github.com/gonicus/gofaxip
+// This file is part of the GOfax.IP project - https://github.com/MatteoMynet/gofaxip
 // Copyright (C) 2014 GONICUS GmbH, Germany - http://www.gonicus.de
 //
 // This program is free software; you can redistribute it and/or
@@ -23,8 +23,8 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/gonicus/gofaxip/gofaxlib"
-	"github.com/gonicus/gofaxip/gofaxlib/logger"
+	"github.com/MatteoMynet/gofaxip/gofaxlib"
+	"github.com/MatteoMynet/gofaxip/gofaxlib/logger"
 )
 
 const (

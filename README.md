@@ -47,7 +47,7 @@ apt-get install hylafax-server freeswitch freeswitch-mod-commands freeswitch-mod
 
 ### GOfax.IP
 
-See [releases](https://github.com/gonicus/gofaxip/releases) for amd64 Debian packages.
+See [releases](https://github.com/MatteoMynet/gofaxip/releases) for amd64 Debian packages.
 
 Use ```dpkg -i``` to install the latest package.
 
@@ -173,7 +173,7 @@ A transmission is regarded as failed and added to the fallback database if SpanD
 GOfax.IP is implemented in [Go](https://golang.org/doc/install), it can be built using `go get`.
 
 ```
-go get github.com/gonicus/gofaxip/...
+go get github.com/MatteoMynet/gofaxip/...
 ```
 
 This will produce the binaries `gofaxd` and `gofaxsend`.
@@ -183,7 +183,7 @@ This will produce the binaries `gofaxd` and `gofaxsend`.
 With golang package from debian repository:
 ```
 apt install dh-golang dh-systemd git-buildpackage
-git clone https://github.com/gonicus/gofaxip
+git clone https://github.com/MatteoMynet/gofaxip
 cd gofaxip
 dpkg-buildpackage -us -uc -rfakeroot -b
 ```

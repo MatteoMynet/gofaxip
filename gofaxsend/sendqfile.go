@@ -127,6 +127,10 @@ func SendQfile(qfilename string) (int, error) {
 			faxjob.Gateways = strings.Split(gatewayString, ",")
 		}
 
+		if gofaxlib.DynamicConfigBool("DisableV17") {
+			faxjob.DisableV17 = true
+		}
+
 	}
 
 	// Start session

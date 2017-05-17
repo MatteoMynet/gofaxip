@@ -82,7 +82,13 @@ func main() {
 
 	// Start modem device manager
 	var err error
-	devmanager, err = newManager(modemPrefix, gofaxlib.Config.Hylafax.Modems)
+
+	if gofaxlib.Config.Hylafax.ModemPrefix == "" {
+		gofaxlib.Config.Hylafax.ModemPrefix = modemPrefix
+	}
+
+	devmanager, err = newManager(gofaxlib.Config.Hylafax.ModemPrefix, gofaxlib.Config.Hylafax.Modems)
+
 	if err != nil {
 		logger.Logger.Fatal(err)
 	}

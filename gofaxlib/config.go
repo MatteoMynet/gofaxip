@@ -45,6 +45,7 @@ type config struct {
 		Spooldir   string
 		Modems     uint
 		Xferfaxlog string
+		ModemPrefix string
 	}
 	Gofaxd struct {
 		Socket                 string

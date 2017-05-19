@@ -59,8 +59,9 @@ type config struct {
 		FaxNumber     string
 		CallPrefix    string
 		DynamicConfig string
-        DisableV17AfterRetry string
-        DisableECMAfterRetry string
+		DisableT38AfterRetry string
+        	DisableV17AfterRetry string
+        	DisableECMAfterRetry string
 	}
 }
 

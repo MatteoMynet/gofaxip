@@ -104,7 +104,7 @@ func (t *transmission) start() {
 	}
 
 	// Check if T.38 should be disabled
-	disableT38 := gofaxlib.Config.Freeswitch.DisableT38
+	disableT38 := gofaxlib.Config.Freeswitch.DisableT38 || t.faxjob.DisableT38
 	if disableT38 {
 		t.sessionlog.Log("T.38 disabled by configuration")
 	} else {

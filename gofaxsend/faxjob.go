@@ -35,6 +35,8 @@ type FaxJob struct {
 	Filename string
 	// Use ECM (default: true)
 	UseECM bool
+	// Disable T38 (default: true)
+	DisableT38 bool
 	// Disable V.17 and limit signal rate to 9600 (default: false)
 	DisableV17 bool
 	// Fax ident

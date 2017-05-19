@@ -127,10 +127,17 @@ func SendQfile(qfilename string) (int, error) {
 			faxjob.Gateways = strings.Split(gatewayString, ",")
 		}
 
+		if gofaxlib.DynamicConfigBool(dc.GetFirst("DisableECM")) {
+			faxjob.UseECM = false
+		}
+
 		if gofaxlib.DynamicConfigBool(dc.GetFirst("DisableV17")) {
 			faxjob.DisableV17 = true
 		}
 
+		if gofaxlib.DynamicConfigBool(dc.GetFirst("DisableT38")) {
+			faxjob.DisableT38 = true
+		}
 	}
 
 	// Start session

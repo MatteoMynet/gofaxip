@@ -192,6 +192,14 @@ func SendQfile(qfilename string) (int, error) {
 	}
 
 	//Auto fallback to slow baudrate after to many tries
+	t38retry, err := strconv.Atoi(gofaxlib.Config.Gofaxsend.DisableT38AfterRetry)
+	if err != nil {
+		t38retry = 0
+	}
+	if t38retry >0  && tottries >= t38retry {
+		faxjob.DisableT38 = true
+	}
+	//Auto fallback to slow baudrate after to many tries
 	v17retry, err := strconv.Atoi(gofaxlib.Config.Gofaxsend.DisableV17AfterRetry)
 	if err != nil {
 		v17retry = 0

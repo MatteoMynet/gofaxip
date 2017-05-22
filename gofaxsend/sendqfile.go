@@ -199,6 +199,12 @@ func SendQfile(qfilename string) (int, error) {
 	if t38retry >0  && tottries >= t38retry {
 		faxjob.DisableT38 = true
 	}
+
+	if !gofaxlib.Config.Freeswitch.DisableT38 && tottries < t38retry {
+		faxjob.UseECM = false
+		faxjob.DisableV17 = true
+	}
+
 	//Auto fallback to slow baudrate after to many tries
 	v17retry, err := strconv.Atoi(gofaxlib.Config.Gofaxsend.DisableV17AfterRetry)
 	if err != nil {
